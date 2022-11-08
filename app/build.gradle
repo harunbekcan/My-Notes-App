@@ -65,4 +65,7 @@ dependencies {
     implementation "androidx.navigation:navigation-runtime-ktx:$navigation"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+
+    // Android Util
+    implementation "com.blankj:utilcodex:1.30.6"
 }
