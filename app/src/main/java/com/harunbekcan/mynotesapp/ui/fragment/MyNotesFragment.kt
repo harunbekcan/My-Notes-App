@@ -13,4 +13,9 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
 
     override fun prepareView(savedInstanceState: Bundle?) {}
 
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
+    }
+
 }

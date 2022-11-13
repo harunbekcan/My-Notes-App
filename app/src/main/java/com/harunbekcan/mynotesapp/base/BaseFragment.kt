@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
 
-    lateinit var binding: VDB
+    var binding: VDB ?= null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,7 +19,7 @@ abstract class BaseFragment<VDB : ViewDataBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(layoutInflater, getLayoutId(), container, false)
-        return binding.root
+        return binding?.root
     }
 
     @LayoutRes
