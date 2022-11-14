@@ -9,6 +9,15 @@
         android:id="@+id/myNotesFragment"
         android:name="com.harunbekcan.mynotesapp.ui.fragment.MyNotesFragment"
         android:label="fragment_my_notes"
-        tools:layout="@layout/fragment_my_notes" />
+        tools:layout="@layout/fragment_my_notes" >
+        <action
+            android:id="@+id/action_myNotesFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.harunbekcan.mynotesapp.ui.fragment.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail" />
 
 </navigation>
