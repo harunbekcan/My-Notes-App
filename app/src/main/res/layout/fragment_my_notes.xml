@@ -9,12 +9,18 @@
         android:layout_height="match_parent"
         android:background="@color/light_blue">
 
+        <include
+            android:id="@+id/myNotesToolbar"
+            layout="@layout/view_toolbar" />
+
        <androidx.recyclerview.widget.RecyclerView
            android:id="@+id/notesRecyclerView"
            android:layout_width="match_parent"
-           android:layout_height="match_parent"
+           android:layout_height="0dp"
            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-           android:orientation="vertical"/>
+           android:orientation="vertical"
+           app:layout_constraintTop_toBottomOf="@+id/myNotesToolbar"
+           app:layout_constraintBottom_toBottomOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addNewNoteButton"

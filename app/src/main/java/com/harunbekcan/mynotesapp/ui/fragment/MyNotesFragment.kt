@@ -13,7 +13,14 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_my_notes
 
     override fun prepareView(savedInstanceState: Bundle?) {
+        initToolbar()
         addNewNoteButtonListener()
+    }
+
+    private fun initToolbar(){
+        binding.myNotesToolbar.apply {
+            toolbarTitle.text = getString(R.string.my_notes)
+        }
     }
 
     private fun addNewNoteButtonListener(){
