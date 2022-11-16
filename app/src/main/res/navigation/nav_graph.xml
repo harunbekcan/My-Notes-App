@@ -13,11 +13,19 @@
         <action
             android:id="@+id/action_myNotesFragment_to_noteDetailFragment"
             app:destination="@id/noteDetailFragment" />
+        <action
+            android:id="@+id/action_myNotesFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/noteDetailFragment"
         android:name="com.harunbekcan.mynotesapp.ui.fragment.NoteDetailFragment"
         android:label="fragment_note_detail"
         tools:layout="@layout/fragment_note_detail" />
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.harunbekcan.mynotesapp.ui.fragment.NewNoteFragment"
+        android:label="fragment_new_note"
+        tools:layout="@layout/fragment_new_note" />
 
 </navigation>

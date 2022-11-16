@@ -2,4 +2,7 @@
     <string name="app_name">MyNotesApp</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="my_notes">My Notes</string>
+    <string name="note_title">Note Title...</string>
+    <string name="enter_notes_here">Enter Notes Here...</string>
+    <string name="create_note">Create Note</string>
 </resources>

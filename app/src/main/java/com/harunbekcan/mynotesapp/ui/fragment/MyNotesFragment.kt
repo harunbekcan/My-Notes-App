@@ -14,7 +14,7 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
 
     override fun prepareView(savedInstanceState: Bundle?) {
         initToolbar()
-        addNewNoteButtonListener()
+        createNewNoteButtonListener()
     }
 
     private fun initToolbar(){
@@ -23,9 +23,9 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
         }
     }
 
-    private fun addNewNoteButtonListener(){
-        binding.addNewNoteButton.setOnClickListener {
-            findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNoteDetailFragment())
+    private fun createNewNoteButtonListener(){
+        binding.createNewNoteButton.setOnClickListener {
+            findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNewNoteFragment())
         }
     }
 }
