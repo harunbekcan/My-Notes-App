@@ -6,10 +6,15 @@ import com.harunbekcan.mynotesapp.data.repo.NoteRepository
 import com.harunbekcan.mynotesapp.data.repo.NoteRepositoryInterface
 import com.harunbekcan.mynotesapp.roomdb.NoteDao
 import com.harunbekcan.mynotesapp.roomdb.NoteDatabase
+import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+@Module
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Singleton

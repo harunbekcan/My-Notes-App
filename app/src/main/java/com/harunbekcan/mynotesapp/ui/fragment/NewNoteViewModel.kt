@@ -7,9 +7,11 @@ import androidx.lifecycle.viewModelScope
 import com.harunbekcan.mynotesapp.data.entity.Note
 import com.harunbekcan.mynotesapp.data.repo.NoteRepository
 import com.harunbekcan.mynotesapp.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class NewNoteViewModel @Inject constructor(private val noteRepository: NoteRepository) : ViewModel() {
 
     private var _noteMessage = MutableLiveData<Resource<Note>>()
