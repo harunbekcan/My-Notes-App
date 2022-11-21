@@ -14,14 +14,14 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun injectRoomDatabase(@ApplicationContext context: Context) = Room.databaseBuilder(context, NoteDatabase::class.java,"NoteDB").build()
+    fun provideRoomDatabase(@ApplicationContext context: Context) = Room.databaseBuilder(context, NoteDatabase::class.java,"NoteDB").build()
 
     @Singleton
     @Provides
-    fun injectDao(database: NoteDatabase) = database.noteDao()
+    fun provideDao(database: NoteDatabase) = database.noteDao()
 
     @Singleton
     @Provides
-    fun injectNoteRepository(dao : NoteDao) = NoteRepository(dao) as NoteRepositoryInterface
+    fun provideNoteRepository(dao : NoteDao) = NoteRepository(dao) as NoteRepositoryInterface
 
 }
