@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment
+package com.harunbekcan.mynotesapp.ui.fragment.newnote
 
 import android.os.Bundle
 import android.widget.Toast

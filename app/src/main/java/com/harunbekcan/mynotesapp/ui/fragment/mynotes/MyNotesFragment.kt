@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment
+package com.harunbekcan.mynotesapp.ui.fragment.mynotes
 
 import android.os.Bundle
 import androidx.fragment.app.viewModels

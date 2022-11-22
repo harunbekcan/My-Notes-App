@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment
+package com.harunbekcan.mynotesapp.ui.fragment.mynotes
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment
+package com.harunbekcan.mynotesapp.ui.fragment.notedetail
 
 import android.os.Bundle
 import android.widget.ImageView

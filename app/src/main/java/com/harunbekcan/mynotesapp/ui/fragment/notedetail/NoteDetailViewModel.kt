@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment
+package com.harunbekcan.mynotesapp.ui.fragment.notedetail
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

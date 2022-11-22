@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment
+package com.harunbekcan.mynotesapp.ui.fragment.newnote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
