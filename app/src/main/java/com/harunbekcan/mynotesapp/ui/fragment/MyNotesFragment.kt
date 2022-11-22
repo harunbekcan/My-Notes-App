@@ -12,8 +12,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
 
-    private lateinit var myNotesAdapter : MyNotesAdapter
-    private val viewModel : MyNotesViewModel by viewModels()
+    private lateinit var myNotesAdapter: MyNotesAdapter
+    private val viewModel: MyNotesViewModel by viewModels()
     override fun getLayoutId(): Int = R.layout.fragment_my_notes
 
     override fun prepareView(savedInstanceState: Bundle?) {
@@ -22,7 +22,7 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
         initObservers()
     }
 
-    private fun initToolbar(){
+    private fun initToolbar() {
         binding.myNotesToolbar.apply {
             toolbarTitle.text = getString(R.string.my_notes)
         }
@@ -36,9 +36,12 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
 
     private fun initObservers() {
         viewModel.noteList.observe(viewLifecycleOwner) {
-            myNotesAdapter = MyNotesAdapter(it, itemClick = {}, deleteButtonClick = { deleteNote->
-                viewModel.deleteNote(deleteNote)
-            })
+            myNotesAdapter = MyNotesAdapter(
+                it,
+                itemClick = { findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNoteDetailFragment()) },
+                deleteButtonClick = { deleteNote ->
+                    viewModel.deleteNote(deleteNote)
+                })
             binding.notesRecyclerView.adapter = myNotesAdapter
         }
     }
