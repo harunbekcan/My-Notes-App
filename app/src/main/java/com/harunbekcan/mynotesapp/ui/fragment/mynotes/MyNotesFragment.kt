@@ -38,7 +38,9 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
         viewModel.noteList.observe(viewLifecycleOwner) {
             myNotesAdapter = MyNotesAdapter(
                 it,
-                itemClick = { findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNoteDetailFragment()) },
+                itemClick = { noteItem->
+                    findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNoteDetailFragment(noteItem))
+                },
                 deleteButtonClick = { deleteNote ->
                     viewModel.deleteNote(deleteNote)
                 })

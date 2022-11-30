@@ -21,7 +21,12 @@
         android:id="@+id/noteDetailFragment"
         android:name="com.harunbekcan.mynotesapp.ui.fragment.notedetail.NoteDetailFragment"
         android:label="fragment_note_detail"
-        tools:layout="@layout/fragment_note_detail" />
+        tools:layout="@layout/fragment_note_detail">
+
+        <argument
+            android:name="noteItem"
+            app:argType="com.harunbekcan.mynotesapp.data.entity.Note"/>
+    </fragment>
     <fragment
         android:id="@+id/newNoteFragment"
         android:name="com.harunbekcan.mynotesapp.ui.fragment.newnote.NewNoteFragment"
