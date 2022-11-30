@@ -23,14 +23,27 @@
         android:label="fragment_note_detail"
         tools:layout="@layout/fragment_note_detail">
 
+        <action
+            android:id="@+id/action_noteDetailFragment_to_myNotesFragment"
+            app:destination="@id/myNotesFragment"
+            app:popUpTo="@id/noteDetailFragment"
+            app:popUpToInclusive="true"/>
+
         <argument
             android:name="noteItem"
             app:argType="com.harunbekcan.mynotesapp.data.entity.Note"/>
+
     </fragment>
     <fragment
         android:id="@+id/newNoteFragment"
         android:name="com.harunbekcan.mynotesapp.ui.fragment.newnote.NewNoteFragment"
         android:label="fragment_new_note"
-        tools:layout="@layout/fragment_new_note" />
+        tools:layout="@layout/fragment_new_note" >
+        <action
+            android:id="@+id/action_newNoteFragment_to_myNotesFragment"
+            app:destination="@id/myNotesFragment"
+            app:popUpTo="@id/newNoteFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
 </navigation>

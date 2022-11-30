@@ -4,24 +4,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragment.notedetail.NoteDetailFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/light_blue">
+        android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/myNoteDetailToolbar"
-            layout="@layout/view_toolbar" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NoteDetailPage"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:background="@color/light_blue">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <include
+                android:id="@+id/noteDetailToolbar"
+                layout="@layout/view_toolbar" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNoteTitle"
+                style="@style/BaseTextInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/noteDetailToolbar">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/noteTitleEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColorHint="@color/gray"
+                    android:textColor="@color/white"
+                    android:inputType="text"
+                    android:hint="@string/note_title"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilNoteDescription"
+                style="@style/BaseTextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilNoteTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/noteDescriptionEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:textColorHint="@color/gray"
+                    android:textColor="@color/white"
+                    android:hint="@string/enter_notes_here"
+                    android:maxLines="40"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minHeight="420dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/updateNoteButton"
+                style="@style/BaseMaterialButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/update_note"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tilNoteDescription"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

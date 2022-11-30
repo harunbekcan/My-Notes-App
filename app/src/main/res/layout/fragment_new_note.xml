@@ -64,6 +64,7 @@
             style="@style/BaseMaterialButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="64dp"
+            android:text="@string/create_note"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
