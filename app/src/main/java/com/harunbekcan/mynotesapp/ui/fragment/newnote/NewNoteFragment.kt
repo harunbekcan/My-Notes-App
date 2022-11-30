@@ -30,7 +30,7 @@ class NewNoteFragment : BaseFragment<FragmentNewNoteBinding>() {
 
     private fun createNoteButtonListener(){
         binding.createNoteButton.setOnClickListener {
-            viewModel.addNote(binding.noteTitleEditText.text.toString(), binding.noteDescriptionEditText.text.toString())
+            viewModel.addNote(binding.noteTitleEditText.text.toString(), binding.noteDescriptionEditText.text.toString(),-1)
         }
     }
 
