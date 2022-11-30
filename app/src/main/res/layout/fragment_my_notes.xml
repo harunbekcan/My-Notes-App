@@ -13,14 +13,18 @@
             android:id="@+id/myNotesToolbar"
             layout="@layout/view_toolbar" />
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/notesRecyclerView"
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-           android:orientation="vertical"
-           app:layout_constraintTop_toBottomOf="@+id/myNotesToolbar"
-           app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/noteRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myNotesToolbar"
+            app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/createNewNoteButton"
@@ -29,11 +33,25 @@
             android:layout_margin="16dp"
             app:backgroundTint="@color/yellowColorDark"
             app:fabSize="normal"
-            app:layout_anchor="@id/notesRecyclerView"
+            app:layout_anchor="@id/noteRecyclerView"
             app:layout_anchorGravity="bottom|right|end"
-            app:layout_constraintBottom_toBottomOf="@+id/notesRecyclerView"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_new_note_button" />
+
+        <TextView
+            android:id="@+id/tvEmptyUi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/do_not_saved_note_message"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myNotesToolbar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -10,24 +10,23 @@
         android:name="com.harunbekcan.mynotesapp.ui.fragment.mynotes.MyNotesFragment"
         android:label="fragment_my_notes"
         tools:layout="@layout/fragment_my_notes" >
-        <action
-            android:id="@+id/action_myNotesFragment_to_noteDetailFragment"
-            app:destination="@id/noteDetailFragment" />
+
         <action
             android:id="@+id/action_myNotesFragment_to_newNoteFragment"
             app:destination="@id/newNoteFragment" />
+        <action
+            android:id="@+id/action_myNotesFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
     </fragment>
     <fragment
-        android:id="@+id/noteDetailFragment"
-        android:name="com.harunbekcan.mynotesapp.ui.fragment.notedetail.NoteDetailFragment"
-        android:label="fragment_note_detail"
-        tools:layout="@layout/fragment_note_detail">
+        android:id="@+id/updateNoteFragment"
+        android:name="com.harunbekcan.mynotesapp.ui.fragment.updatenote.UpdateNoteFragment"
+        android:label="fragment_update_note"
+        tools:layout="@layout/fragment_update_note">
 
         <action
-            android:id="@+id/action_noteDetailFragment_to_myNotesFragment"
-            app:destination="@id/myNotesFragment"
-            app:popUpTo="@id/noteDetailFragment"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_updateNoteFragment_to_myNotesFragment"
+            app:destination="@id/myNotesFragment" />
 
         <argument
             android:name="noteItem"

@@ -5,8 +5,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.harunbekcan.mynotesapp.R
 import com.harunbekcan.mynotesapp.base.BaseFragment
+import com.harunbekcan.mynotesapp.data.entity.Note
 import com.harunbekcan.mynotesapp.databinding.FragmentMyNotesBinding
 import com.harunbekcan.mynotesapp.ui.adapter.MyNotesAdapter
+import com.harunbekcan.mynotesapp.utils.setGone
+import com.harunbekcan.mynotesapp.utils.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,12 +20,12 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_my_notes
 
     override fun prepareView(savedInstanceState: Bundle?) {
-        initToolbar()
+        setToolbar()
         createNewNoteButtonListener()
-        initObservers()
+        noteObserver()
     }
 
-    private fun initToolbar() {
+    private fun setToolbar() {
         binding.myNotesToolbar.apply {
             toolbarTitle.text = getString(R.string.my_notes)
         }
@@ -34,17 +37,28 @@ class MyNotesFragment : BaseFragment<FragmentMyNotesBinding>() {
         }
     }
 
-    private fun initObservers() {
+    private fun checkEmptyList(noteList: List<Note>){
+        if (noteList.isEmpty()){
+            binding.tvEmptyUi.setVisible()
+            binding.noteRecyclerView.setGone()
+        } else {
+            binding.tvEmptyUi.setGone()
+            binding.noteRecyclerView.setVisible()
+        }
+    }
+
+    private fun noteObserver() {
         viewModel.noteList.observe(viewLifecycleOwner) {
             myNotesAdapter = MyNotesAdapter(
                 it,
                 itemClick = { noteItem->
-                    findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToNoteDetailFragment(noteItem))
+                    findNavController().navigate(MyNotesFragmentDirections.actionMyNotesFragmentToUpdateNoteFragment(noteItem))
                 },
                 deleteButtonClick = { deleteNote ->
                     viewModel.deleteNote(deleteNote)
                 })
-            binding.notesRecyclerView.adapter = myNotesAdapter
+            binding.noteRecyclerView.adapter = myNotesAdapter
+            checkEmptyList(it)
         }
     }
 }

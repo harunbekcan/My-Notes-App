@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.notedetail.NoteDetailFragment">
+    tools:context=".ui.fragment.updatenote.UpdateNoteFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
             android:background="@color/light_blue">
 
             <include
-                android:id="@+id/noteDetailToolbar"
+                android:id="@+id/updateNoteToolbar"
                 layout="@layout/view_toolbar" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/noteDetailToolbar">
+                app:layout_constraintTop_toBottomOf="@+id/updateNoteToolbar">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/noteTitleEditText"

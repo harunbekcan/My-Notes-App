@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment.notedetail
+package com.harunbekcan.mynotesapp.ui.fragment.updatenote
 
 import android.os.Bundle
 import android.widget.Toast
@@ -7,31 +7,31 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.harunbekcan.mynotesapp.R
 import com.harunbekcan.mynotesapp.base.BaseFragment
-import com.harunbekcan.mynotesapp.databinding.FragmentNoteDetailBinding
+import com.harunbekcan.mynotesapp.databinding.FragmentUpdateNoteBinding
 import com.harunbekcan.mynotesapp.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NoteDetailFragment : BaseFragment<FragmentNoteDetailBinding>() {
+class UpdateNoteFragment : BaseFragment<FragmentUpdateNoteBinding>() {
 
-    private val navArgs : NoteDetailFragmentArgs by navArgs()
-    private val viewModel : NoteDetailViewModel by viewModels()
+    private val navArgs : UpdateNoteFragmentArgs by navArgs()
+    private val viewModel : UpdateNoteViewModel by viewModels()
 
-    override fun getLayoutId(): Int = R.layout.fragment_note_detail
+    override fun getLayoutId(): Int = R.layout.fragment_update_note
 
     override fun prepareView(savedInstanceState: Bundle?) {
-        initToolbar()
-        initUi()
+        setToolbar()
+        setData()
         updateNoteObserver()
     }
 
-    private fun initToolbar(){
-        binding.noteDetailToolbar.apply {
+    private fun setToolbar(){
+        binding.updateNoteToolbar.apply {
             toolbarTitle.text = getString(R.string.update_note)
         }
     }
 
-    private fun initUi(){
+    private fun setData(){
         navArgs.noteItem.let {
             binding.noteTitleEditText.setText(it.title)
             binding.noteDescriptionEditText.setText(it.description)
@@ -50,7 +50,7 @@ class NoteDetailFragment : BaseFragment<FragmentNoteDetailBinding>() {
             when (it.status) {
                 Status.SUCCESS -> {
                     Toast.makeText(requireActivity(),"Your note has been successfully updated.", Toast.LENGTH_LONG).show()
-                    findNavController().navigate(NoteDetailFragmentDirections.actionNoteDetailFragmentToMyNotesFragment())
+                    findNavController().navigate(UpdateNoteFragmentDirections.actionUpdateNoteFragmentToMyNotesFragment())
                 }
 
                 Status.ERROR -> {

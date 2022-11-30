@@ -17,12 +17,12 @@ class NewNoteFragment : BaseFragment<FragmentNewNoteBinding>() {
     override fun getLayoutId(): Int = R.layout.fragment_new_note
 
     override fun prepareView(savedInstanceState: Bundle?) {
-        initToolbar()
+        setToolbar()
         createNoteButtonListener()
-        initObserver()
+        newNoteObserver()
     }
 
-    private fun initToolbar(){
+    private fun setToolbar(){
         binding.newNoteToolbar.apply {
             toolbarTitle.text = getString(R.string.create_note)
         }
@@ -34,11 +34,11 @@ class NewNoteFragment : BaseFragment<FragmentNewNoteBinding>() {
         }
     }
 
-    private fun initObserver(){
+    private fun newNoteObserver(){
         viewModel.noteMessage.observe(viewLifecycleOwner){
             when (it.status) {
                 Status.SUCCESS -> {
-                    Toast.makeText(requireActivity(),"Success", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireActivity(),"Your note has been successfully created.", Toast.LENGTH_LONG).show()
                     findNavController().navigateUp()
                 }
 

@@ -6,4 +6,5 @@
     <string name="enter_notes_here">Enter Notes Here...</string>
     <string name="create_note">Create Note</string>
     <string name="update_note">Update Note</string>
+    <string name="do_not_saved_note_message">You don\'t have a saved note.</string>
 </resources>

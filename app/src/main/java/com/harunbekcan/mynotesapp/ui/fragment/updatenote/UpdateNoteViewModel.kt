@@ -1,4 +1,4 @@
-package com.harunbekcan.mynotesapp.ui.fragment.notedetail
+package com.harunbekcan.mynotesapp.ui.fragment.updatenote
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,11 +9,10 @@ import com.harunbekcan.mynotesapp.data.repo.NoteRepository
 import com.harunbekcan.mynotesapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.net.IDN
 import javax.inject.Inject
 
 @HiltViewModel
-class NoteDetailViewModel @Inject constructor(private val noteRepository: NoteRepository) : ViewModel() {
+class UpdateNoteViewModel @Inject constructor(private val noteRepository: NoteRepository) : ViewModel() {
 
     private var _updateNoteMessage = MutableLiveData<Resource<Note>>()
     val updateNoteMessage : LiveData<Resource<Note>> get() = _updateNoteMessage
